@@ -1,0 +1,19 @@
+name: practice-workflow1
+on: push
+jobs: 
+     lint:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Lint the files
+          run: eslint --ext .jsx --fix src
+     test: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: Perform tests on src
+          run: vite build
+
+     build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Build locally
+          run: vitest run 
